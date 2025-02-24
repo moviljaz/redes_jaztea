@@ -92,7 +92,7 @@ class LinktreePage extends StatelessWidget {
                 LocationCard(
                   title: 'Jaztea Room Arjona',
                   address:
-                      'Blvd. Mario López Valdez 1535-local 17, 80056 Culiacán Rosales, Sin.',
+                      'Blvd. Mario López Valdez 1535-Local 17, 80056 Culiacán Rosales, Sin.',
                   url: 'https://maps.app.goo.gl/1J28oj6mJSSa1QA89',
                 ),
               ],
