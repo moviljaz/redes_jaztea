@@ -30,82 +30,84 @@ class LinktreePage extends StatelessWidget {
         decoration: const BoxDecoration(
           color: Color(0xFFf7c424), // Color de fondo amarillo
         ),
- child: Center(
-  child: ConstrainedBox(
-    constraints: const BoxConstraints(maxWidth: 2000), // Máximo 600px de ancho
-    child: SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(height: 50),
-          Center(
-            child: Image.asset(
-              'assets/logoletras.png',
-              fit: BoxFit.contain,
-              width: MediaQuery.of(context).size.width * 0.8,
-              height: 100,
+        child: Center(
+          child: ConstrainedBox(
+            constraints:
+                const BoxConstraints(maxWidth: 2000), // Máximo 600px de ancho
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 50),
+                  Center(
+                    child: Image.asset(
+                      'assets/logoletras.png',
+                      fit: BoxFit.contain,
+                      width: MediaQuery.of(context).size.width * 0.8,
+                      height: 100,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+
+                  // 🔹 Botones de redes sociales
+                  const LinkButton(
+                    text: 'FACEBOOK || JAZTEA EL ORIGINAL',
+                    icon: FaIcon(FontAwesomeIcons.facebook, color: Colors.blue),
+                    url:
+                        'https://www.facebook.com/share/188dBHT2wf/?mibextid=LQQJ4d',
+                  ),
+                  const LinkButton(
+                    text: 'INSTAGRAM || JAZTEA EL ORIGINAL',
+                    icon:
+                        FaIcon(FontAwesomeIcons.instagram, color: Colors.pink),
+                    url:
+                        'https://www.instagram.com/jaztea.original/?igsh=aTVmaWF2aDVraDZ3',
+                  ),
+                  const LinkButton(
+                    text: 'TIKTOK || JAZTEA EL ORIGINAL',
+                    icon: FaIcon(FontAwesomeIcons.tiktok, color: Colors.black),
+                    url:
+                        'https://www.tiktok.com/@jazteaeloriginal?_t=8sBQBlA14Mf&_r=1',
+                  ),
+                  const LinkButton(
+                    text: 'WHATSAPP || JAZTEA EL ORIGINAL',
+                    icon:
+                        FaIcon(FontAwesomeIcons.whatsapp, color: Colors.green),
+                    url:
+                        'https://api.whatsapp.com/send?phone=5213316022513&text=Hola%20Jaztea%2C%20Me%20gustaria%20realizar%20un%20pedido%20a%20domicilio',
+                  ),
+
+                  // 🔹 Tarjetas de ubicación
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Wrap(
+                      spacing: 10,
+                      runSpacing: 10,
+                      alignment: WrapAlignment.center,
+                      children: [
+                        LocationCard(
+                          title: 'Jaztea Room Lola',
+                          address:
+                              'Lola Beltrán 3297, 80058 Culiacán Rosales, Sin.',
+                          url: 'https://maps.app.goo.gl/Vx3FXTbeixnzdp8J8',
+                        ),
+                        LocationCard(
+                          title: 'Jaztea Room Arjona',
+                          address:
+                              'Blvd. Mario López Valdez 1535-Local 17, 80056 Culiacán Rosales, Sin.',
+                          url: 'https://maps.app.goo.gl/1J28oj6mJSSa1QA89',
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 50), // Espaciado inferior
+                ],
+              ),
             ),
           ),
-          const SizedBox(height: 20),
-
-          // 🔹 Botones de redes sociales
-          const LinkButton(
-            text: 'FACEBOOK || JAZTEA EL ORIGINAL',
-            icon: FaIcon(FontAwesomeIcons.facebook, color: Colors.blue),
-            url:
-                'https://www.facebook.com/share/188dBHT2wf/?mibextid=LQQJ4d',
-          ),
-          const LinkButton(
-            text: 'INSTAGRAM || JAZTEA EL ORIGINAL',
-            icon: FaIcon(FontAwesomeIcons.instagram, color: Colors.pink),
-            url:
-                'https://www.instagram.com/jaztea.original/?igsh=aTVmaWF2aDVraDZ3',
-          ),
-          const LinkButton(
-            text: 'TIKTOK || JAZTEA EL ORIGINAL',
-            icon: FaIcon(FontAwesomeIcons.tiktok, color: Colors.black),
-            url:
-                'https://www.tiktok.com/@jazteaeloriginal?_t=8sBQBlA14Mf&_r=1',
-          ),
-          const LinkButton(
-            text: 'WHATSAPP || JAZTEA EL ORIGINAL',
-            icon: FaIcon(FontAwesomeIcons.whatsapp, color: Colors.green),
-            url:
-                'https://api.whatsapp.com/send?phone=5213316022513&text=Hola%20Jaztea%2C%20Me%20gustaria%20realizar%20un%20pedido%20a%20domicilio',
-          ),
-
-          // 🔹 Tarjetas de ubicación
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Wrap(
-              spacing: 10,
-              runSpacing: 10,
-              alignment: WrapAlignment.center,
-              children: [
-                LocationCard(
-                  title: 'Jaztea Room Lola',
-                  address:
-                      'Lola Beltrán 3297, 80058 Culiacán Rosales, Sin.',
-                  url: 'https://maps.app.goo.gl/Vx3FXTbeixnzdp8J8',
-                ),
-                LocationCard(
-                  title: 'Jaztea Room Arjona',
-                  address:
-                      'Blvd. Mario López Valdez 1535-Local 17, 80056 Culiacán Rosales, Sin.',
-                  url: 'https://maps.app.goo.gl/1J28oj6mJSSa1QA89',
-                ),
-              ],
-            ),
-          ),
-
-          const SizedBox(height: 50), // Espaciado inferior
-        ],
-      ),
-    ),
-  ),
-),
-
+        ),
       ),
     );
   }
@@ -209,7 +211,8 @@ class LocationCard extends StatelessWidget {
       await launchUrl(uri, mode: LaunchMode.externalApplication);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('No se pudo abrir el enlace de Google Maps.')),
+        const SnackBar(
+            content: Text('No se pudo abrir el enlace de Google Maps.')),
       );
     }
   }
